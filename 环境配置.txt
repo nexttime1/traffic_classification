@@ -1,0 +1,24 @@
+创建一个新环境  conda 新环境
+我用到python 版本 ：Python 3.11.2
+
+# 添加 conda-forge 频道
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+# 用conda装 自动整合依赖 防止冲突
+conda install "numpy=1.25.2" "scipy=1.10.1" "scikit-learn=1.2.2" -y
+
+# 我的cuda版本为12.1  只要兼容 可以自己指定 torch 要GPU版本  torch 只要和自己的python 版本 兼容 不要太高 要不 numpy版本不适应 自己版本如果不行的话，就按照我的这些版本来
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+
+
+pip install scapy==2.4.5 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+pip install click==8.1.8 tqdm==4.65.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+
+
+
+
+
+

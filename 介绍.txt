@@ -1,0 +1,18 @@
+预处理工作已经做好，已经给出预处理后的数据是在 datasets/NetFlowClassifier目录下   app文件夹对应的数据集为TOR，service文件夹对应ISCX-VPN
+当前代码运行的是TOR数据集，已经将处理ISCX-VPN数据集的代码注释，如果处理ISCX-VPN，将models目录下的模型保存路径：
+self.save_path = './datasets/NetFlowClassifier/app/saved_dict/NetFlowClassifier.ckpt'  # 模型保存路径
+修改成：
+self.save_path = './datasets/NetFlowClassifier/service/saved_dict/NetFlowClassifier.ckpt'  # 模型保存路径
+也就是 把路径的app 改成 service 就行
+
+训练好的模型已经保存 如果想测试： 默认和是tor数据集 也就是这条指令
+python run.py --model NetFlowClassifier --data ./datasets/NetFlowClassifier/app --test 0
+
+如果想测试ISCX-VPN数据集 要改完self.save_path 后 执行：
+python run.py --model NetFlowClassifier --data ./datasets/NetFlowClassifier/service --test 0
+
+如果想训练 tor数据集
+python run.py --model NetFlowClassifier --data ./datasets/NetFlowClassifier/app --test 1
+
+ISCX-VPN数据集
+python run.py --model NetFlowClassifier --data ./datasets/NetFlowClassifier/service --test 0
